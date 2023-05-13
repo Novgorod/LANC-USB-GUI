@@ -28,7 +28,7 @@ The code follows the [protocol documentation](http://www.boehmel.de/lanc.htm) an
 
 - The original code only returned a single LANC frame after a command has been sent. The new code reads every LANC frame (at 50Hz for PAL or 60Hz for NTSC) and sends it as raw data (8 bytes followed by a line feed) to the serial port. The terminal program has to convert the code into hex characters to be human readable if required. The data is sent over the serial port at 115200kbps as soon as one byte is received from the LANC line.
 - The background functions provided by the Arduino transparently to the user (such as timers) make use of interrupts and introduce unpredictable ~10µs jitter a few percent of the time. Interrupts are disabled in the new code during the critical bit-banging period, elimitating all timing jitter.
-- The LANC command from the user is read over the serial port between the LANC frames. The commands are 2 bytes formatted as hex characters (i.e., 4 ASCII characters representing hex digits) followed by a line feed.
+- The LANC command from the user is read over the serial port between the LANC frames. A command consists of 2 bytes formatted as hex characters (i.e., 4 ASCII characters representing hex digits) followed by a line feed.
 
 ## Remote emulator GUI
 
