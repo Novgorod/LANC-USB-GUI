@@ -38,7 +38,7 @@ The GUI software `Sony LANC remote.vi` mimics some basic functions of a wired re
 
 ### Requirements
 
-The GUI software is written in National Instruments Labview 2022, which requires the development environment (including NI-VISA) to view and edit the source code. A [compiled executable](https://github.com/Novgorod/LANC-USB-GUI/releases/tag/LANC) is available for Windows (under Releases), which requires the free [Labview Runtime Engine 2022](https://download.ni.com/support/nipkg/products/ni-l/ni-labview-2022-runtime-engine-x86/22.3/online/ni-labview-2022-runtime-engine-x86_22.3_online.exe) or later.
+The GUI software is written in National Instruments Labview 2022, which requires the development environment (including NI-VISA) to view and edit the source code. A [compiled executable](https://github.com/Novgorod/LANC-USB-GUI/releases/tag/LANC) is available for Windows (under Releases), which requires the free [Labview Runtime Engine 2022](https://download.ni.com/support/nipkg/products/ni-l/ni-labview-2022-runtime-engine-x86/22.3/online/ni-labview-2022-runtime-engine-x86_22.3_online.exe) and [NI-Serial Runtime 21.5](https://download.ni.com/support/nipkg/products/ni-s/ni-serial/21.5/online/ni-serial_21.5_online.exe) or later.
 
 ### Usage
 
