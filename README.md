@@ -26,7 +26,7 @@ Use the [Arduino IDE](https://www.arduino.cc/en/software) to compile and deploy 
 
 The code follows the [protocol documentation](http://www.boehmel.de/lanc.htm) and is loosely based on the Arduino Nano LANC implementation by [L. Rosén](https://projecthub.arduino.cc/L-Rosen/9b5d02d4-f885-41ee-bba7-6b18d3dfe47d) with some important changes:
 
-- The original code only returned a single LANC frame after a command has been sent. The new code reads every LANC frame (at 50Hz for PAL or 60Hz for NTSC) and sends it as raw data (8 bytes followed by a line feed) to the serial port. The terminal program has to convert the code into hex characters to be human readable if required. The data is sent over the serial port at 115200kbps as soon as one byte is received from the LANC line.
+- The original code only returned a single LANC frame after a command has been sent. The new code reads every LANC frame (at 50Hz for PAL or 60Hz for NTSC) and sends it as raw data (8 bytes followed by a line feed) to the serial port. The terminal program has to convert the code into hex characters to be human readable if required. The data is sent over the serial port at 115.2kbps as soon as one byte is received from the LANC line.
 - The background functions provided by the Arduino transparently to the user (such as timers) make use of interrupts and introduce unpredictable ~10µs jitter a few percent of the time. Interrupts are disabled in the new code during the critical bit-banging period, elimitating all timing jitter.
 - The LANC command from the user is read over the serial port between the LANC frames. A command consists of 2 bytes formatted as hex characters (i.e., 4 ASCII characters representing hex digits) followed by a line feed.
 
@@ -42,4 +42,4 @@ The GUI software is written in National Instruments Labview 2023, which requires
 
 ### Usage
 
-Run the .vi or the compiled executable with the Arduino connected to the PC and the LANC device. Select the Arduino's COM port in the prompt at startup and click Ok. Once the GUI is connected and showing the camera status, you can send commands with the buttons, from the drop-down menu or as manual hexadecimal input.
+Run the .vi or the compiled executable with the Arduino connected to the PC and the (active) LANC device. Select the Arduino's COM port in the prompt at startup and click Ok. Once the GUI is connected and showing the camera status, you can send commands with the buttons, from the drop-down menu or as manual hexadecimal input. Note that the forward/rewind buttons can be used for forward/backward seek when held down during playback.
